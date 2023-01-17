@@ -3,8 +3,13 @@ import { BsCheckSquareFill } from 'react-icons/bs'
 import { ImCheckboxUnchecked } from 'react-icons/im'
 import { AiFillEyeInvisible , AiFillEye} from 'react-icons/ai'
 import { useRef, useState } from 'react'
+import {useNavigate} from 'react-router-dom'
+import Admine from '../admin/Admine'
 
-function Login() {
+function Login({setapp }) {
+    // Input Ref connnect
+    const emailRef = useRef()
+    const passwordRef = useRef()
 
     // Save User Info On-Off function
     const [check, setCheck] = useState(<ImCheckboxUnchecked color='#919EAB' size={'24px'} />)
@@ -42,6 +47,25 @@ function Login() {
     const [labelClassPASSWORD , setlabelClassPASSWORD] = useState('defalutLabel')
     const [labelClassEMAIL , setlabelClassEMAIL] = useState('defalutLabel')
 
+    // User Info
+    // const userInfo = [
+    //     {
+    //         email: 'demo@gmail.com' ,
+    //         password: 'demo1212'
+    //     }
+    // ]
+    const navigate = useNavigate()
+    const email = 'demo@gmail.com'
+    const password = 'demo1234'
+
+
+    function OnAdmin() {
+        if (email == emailRef.current.value && password == passwordRef.current.value) {
+            navigate('/app')
+            setapp(<Admine />)   
+        }
+    }
+
     return (
         <>
             <div className="login">
@@ -53,11 +77,11 @@ function Login() {
                     <div className="LoginInputs">
                         <div className="email">
                             <label htmlFor="" className={labelClassEMAIL} >Email</label>
-                            <input type="email" onClick={() => setlabelClassEMAIL('defalutLabel topLabelEmail')}/>
+                            <input ref={emailRef} type="email" onClick={() => setlabelClassEMAIL('defalutLabel topLabelEmail')}/>
                         </div>
                         <div className="password">
                             <label htmlFor="" className={labelClassPASSWORD } >Password</label>
-                            <input type={inType}  onClick={() => setlabelClassPASSWORD('defalutLabel topLabelPassword')}/>
+                            <input ref={passwordRef} type={inType}  onClick={() => setlabelClassPASSWORD('defalutLabel topLabelPassword')}/>
                             <span className='aye' onClick={AyeOnOff}>{aye}</span>
                         </div>
                     </div>
@@ -71,7 +95,7 @@ function Login() {
                                 <a href="">Parolni unutdingizmi?</a>
                             </div>
                         </div>
-                        <div class="btn btn-three">
+                        <div class="btn btn-three" onClick={OnAdmin}>
                             <span>HOVER ME</span>
                         </div>
                     </div>
