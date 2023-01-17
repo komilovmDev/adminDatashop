@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter';
+}
+body {
+    min-height: 100vh;
+}
+
+.login {
+    width: 100%;
+    height: 100vh;
+    background-color: #161C24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.loginCon {
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.loginHader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+}
+
+.loginHader h1 {
+    font-size: 28px;
+    color: #FFFFFF;
+}
+.loginHader img {
+    width: 150px;
+    height: 30px;
+}
+.LoginInputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.LoginInputs .email {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    color: #637381;
+    gap: 5px;
+}
+.LoginInputs .email input {
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+}
+.LoginInputs .email input:hover {
+    border: 2px solid #FFFFFF;
+}
+.LoginInputs .email input:focus {
+    transition: 0.1s;
+    outline: 3px solid #00AB55;
+    border-color: #00AB55;
+}
+.LoginInputs .email input:hover .emailTitle {
+    color: #00AB55;
+}
+.LoginInputs .password {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    color: #637381;
+    gap: 5px;
+}
+.LoginInputs .password input {
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+}
+.LoginInputs .password input:hover {
+    border: 2px solid #FFFFFF;
+}
+.LoginInputs .password input:focus {
+    transition: 0.1s;
+    outline: 3px solid #00AB55;
+    border-color: #00AB55;
+}
+.LoginInputs .password input:hover .emailTitle {
+    color: #00AB55;
+}
+.saveLogin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.saveLogin span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.saveLogin span:hover {
+    box-shadow: 0px 0px 0px 15px #00ab560f;
+    border-radius: 50%;
+}
+.saveLogin a {
+    color: #00AB55;
+    text-decoration: none;
+    font-weight: bold;
+    user-select: none;
+}
+.saveLogin a:hover {
+    text-decoration:underline;
+}
+.saveCheck {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.saveCheck h3 {
+    color:  #FFFFFF;
+    font-size: 16px;
+    user-select: none;
+}
+.btn-three {
+    height: 50px;
+    color: #FFF;
+    transition: all 0.5s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  .btn-three::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #00AB55;
+    transition: all 0.3s;
+    border-radius: 10px;
+    color: white;
+  }
+  .btn-three:hover::before {
+    opacity: 0 ;
+    transform: scale(0.5,0.5);
+    border-radius: 10px;
+  }
+  .btn-three::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid #00ab565c;
+    background-color: #00ab565c;
+    transform: scale(1.2,1.2);
+    border-radius: 10px;
+    color: #FFFFFF;
+  }
+  .btn-three:hover::after {
+    opacity: 1;
+    transform: scale(1,1);
+  }
+  .btn-three span {
+    z-index: 3;
+    user-select: none;
+  }
+  .loginFooter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .btn-three:active {
+    transition: none;
+    background-color: #00AB55;
+  }
