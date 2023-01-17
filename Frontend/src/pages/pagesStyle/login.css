@@ -48,6 +48,7 @@ body {
     align-items: center;
 }
 .LoginInputs .email {
+    position: relative;
     width: 100%;
     height: 100px;
     display: flex;
@@ -61,7 +62,7 @@ body {
     background-color: transparent;
     box-shadow: none;
     border: none;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #ffffff59;
     border-radius: 10px;
     font-size: 16px;
     color: #FFFFFF;
@@ -80,6 +81,7 @@ body {
     color: #00AB55;
 }
 .LoginInputs .password {
+    position: relative;
     width: 100%;
     height: 100px;
     display: flex;
@@ -95,14 +97,14 @@ body {
     background-color: transparent;
     box-shadow: none;
     border: none;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #ffffff59;
     border-radius: 10px;
     font-size: 16px;
     color: #FFFFFF;
     padding-left: 10px;
 }
 .LoginInputs .password input:hover {
-    border: 2px solid #FFFFFF;
+    border: 1px solid #FFFFFF;
 }
 .LoginInputs .password input:focus {
     transition: 0.1s;
@@ -211,6 +213,27 @@ body {
   .aye {
     cursor: pointer;
     position: absolute;
-    top: 40px;
+    top: 18px;
     right: 0;
+  }
+
+  .topLabelEmail {
+    position: absolute;
+    transform: translateX(-10px) translateY(-30px);
+    background-color: #161C24;
+    padding: 0px 10px;
+    font-size: 12px;
+  }
+  .topLabelPassword {
+    position: absolute;
+    transform: translateX(-10px) translateY(-30px);
+    background-color: #161C24;
+    padding: 0px 10px;
+  }
+  .defalutLabel {
+    position: absolute;
+    top: 20%;
+    left: 20px;
+    font-size: 16px;
+    transition: 0.2s;
   }

@@ -1,11 +1,12 @@
 import datashopLogo from './datalogo 1.png'
 import { BsCheckSquareFill } from 'react-icons/bs'
 import { ImCheckboxUnchecked } from 'react-icons/im'
-import { AiFillEyeInvisible} from 'react-icons/ai'
-import { useState } from 'react'
+import { AiFillEyeInvisible , AiFillEye} from 'react-icons/ai'
+import { useRef, useState } from 'react'
 
 function Login() {
 
+    // Save User Info On-Off function
     const [check, setCheck] = useState(<ImCheckboxUnchecked color='#919EAB' size={'24px'} />)
     const [a, setA] = useState(true)
     function CheskOnOff() {
@@ -19,6 +20,28 @@ function Login() {
         }
     }
 
+
+    // Password eye On-Off function
+    const [aye , setAye] = useState(<AiFillEyeInvisible size='28px'/>)
+    const [b , setB] = useState(false)
+    const [inType , setInType] = useState('password')
+    function AyeOnOff() {
+        if (b == true) {
+            setAye(<AiFillEyeInvisible size='28px'/>)
+            setInType('password')
+            setB(false)
+        }
+        if (b == false) {
+            setAye(<AiFillEye size={'28px'}/>)
+            setInType('text')
+            setB(true)
+        }
+    }
+
+    // Label Animation
+    const [labelClassPASSWORD , setlabelClassPASSWORD] = useState('defalutLabel')
+    const [labelClassEMAIL , setlabelClassEMAIL] = useState('defalutLabel')
+
     return (
         <>
             <div className="login">
@@ -29,13 +52,13 @@ function Login() {
                     </div>
                     <div className="LoginInputs">
                         <div className="email">
-                            <label htmlFor="" className='emailTitle'>Email</label>
-                            <input type="email" />
+                            <label htmlFor="" className={labelClassEMAIL} >Email</label>
+                            <input type="email" onClick={() => setlabelClassEMAIL('defalutLabel topLabelEmail')}/>
                         </div>
                         <div className="password">
-                            <label htmlFor="Password">Password</label>
-                            <input type="password" />
-                            <span className='aye'><AiFillEyeInvisible size='28px'/></span>
+                            <label htmlFor="" className={labelClassPASSWORD } >Password</label>
+                            <input type={inType}  onClick={() => setlabelClassPASSWORD('defalutLabel topLabelPassword')}/>
+                            <span className='aye' onClick={AyeOnOff}>{aye}</span>
                         </div>
                     </div>
                     <div className="loginFooter">
