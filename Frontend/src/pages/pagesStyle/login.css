@@ -63,6 +63,10 @@ body {
     border: none;
     border: 1px solid #FFFFFF;
     border-radius: 10px;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-left: 10px;
+    outline: 3px solid #00ab5600;
 }
 .LoginInputs .email input:hover {
     border: 2px solid #FFFFFF;
@@ -82,6 +86,8 @@ body {
     flex-direction: column;
     color: #637381;
     gap: 5px;
+    position: relative;
+    outline: 3px solid #00ab5600;
 }
 .LoginInputs .password input {
     width: 100%;
@@ -91,6 +97,9 @@ body {
     border: none;
     border: 1px solid #FFFFFF;
     border-radius: 10px;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-left: 10px;
 }
 .LoginInputs .password input:hover {
     border: 2px solid #FFFFFF;
@@ -198,4 +207,10 @@ body {
   .btn-three:active {
     transition: none;
     background-color: #00AB55;
+  }     
+  .aye {
+    cursor: pointer;
+    position: absolute;
+    top: 40px;
+    right: 0;
   }
